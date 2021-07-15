@@ -1,0 +1,82 @@
+.message{
+    width: 350px;
+    margin: 25px;
+    background-color: red;
+    display: grid;
+    position: relative;
+    grid-template-columns: 30% 70% ;
+
+}
+
+.message img {
+    width: 60px;
+    border-radius: 100%;
+    position: absolute;
+    right:30px;
+    bottom: 5px;
+
+
+
+}
+
+.blockMessage{
+    margin: 5px;
+    background-color: greenyellow;
+    border-radius:10px;
+    position: relative;
+
+}
+
+.blockName{
+
+    border-radius: inherit;
+    margin: 5px;
+    padding-right: 10px;
+    color: blueviolet;
+}
+
+.blockMessage{
+    margin: 5px;
+
+    padding-left: 5px;
+    background-color: #161218;
+    color: rosybrown;
+    display: grid;
+    position: relative;
+}
+
+
+
+
+.blockTime{
+
+    border-radius: inherit;
+    margin: 5px;
+    margin-right: 15px;
+    text-align: right;
+    color: blueviolet;
+}
+
+.messageImage{
+    display: grid;
+    position: relative;
+    /*background-color: aqua;*/
+
+}
+
+.trianglebottomright {
+    width: 0;
+    height: 10px;
+    border-bottom: 20px solid #161218;
+    border-left: 40px solid transparent;
+    position: absolute;
+    left: 80px;
+    bottom:5px;
+
+
+
+
+}
+
+
+
