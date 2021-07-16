@@ -7,7 +7,7 @@ const messageData = {
     message: 'some text',
     time: '22:00',
 }
-
+// затипизируй данные
 const messageData2 = {
     avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
     name: 'Ivan',
