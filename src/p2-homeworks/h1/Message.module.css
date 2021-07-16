@@ -18,7 +18,7 @@
 
 
 }
-
+/*одинаковый селектор?*/
 .blockMessage{
     margin: 5px;
     background-color: greenyellow;
@@ -34,7 +34,7 @@
     padding-right: 10px;
     color: blueviolet;
 }
-
+/*одинаковый селектор?*/
 .blockMessage{
     margin: 5px;
 
@@ -51,6 +51,7 @@
 .blockTime{
 
     border-radius: inherit;
+    /*два раза марджин соедени в один*/
     margin: 5px;
     margin-right: 15px;
     text-align: right;
@@ -63,7 +64,7 @@
     /*background-color: aqua;*/
 
 }
-
+/*писать либо в camelCase либо с нижнем подчеркиванием triangle_bottom_right*/
 .trianglebottomright {
     width: 0;
     height: 10px;
@@ -72,10 +73,6 @@
     position: absolute;
     left: 80px;
     bottom:5px;
-
-
-
-
 }
 
 
