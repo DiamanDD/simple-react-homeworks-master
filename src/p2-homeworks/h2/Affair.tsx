@@ -9,9 +9,8 @@ export type affairType = {
 
 function Affair(props: affairType) {
     const {id, name, priority, deleteAffairCallback} = props
-    const deleteCallback = () => {
-        deleteAffairCallback(id)
-    }
+    const deleteCallback = () => deleteAffairCallback(id)
+
     return (
         <div>
             {
