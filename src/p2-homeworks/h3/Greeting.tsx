@@ -4,7 +4,7 @@ import s from "./Greeting.module.css"
 type GreetingPropsType = {
     name: string
     setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void
-    addUser: any
+    addUser: any //затипизируй
     error: string
     totalUsers: number
 }
