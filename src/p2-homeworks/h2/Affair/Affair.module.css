@@ -1,0 +1,63 @@
+
+.container{
+    width: 300px;
+    margin: 2px;
+    padding: 2px;
+    display: grid;
+    border: 1px solid darkgray;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: 20px ;
+    grid-template-areas:
+    "userName userName priority addButton";
+
+
+
+}
+
+.userName{
+    grid-area: userName;
+    color: firebrick;
+    font-weight: bold;
+    display: grid;
+    /*justify-items: center;*/
+
+
+
+
+}
+.middlePriority{
+    grid-area: priority;
+    font-weight: bold;
+    color: blue;
+    font-weight: bold;
+    display: grid;
+
+
+}
+.highPriority{
+    grid-area: priority;
+    font-weight: bold;
+    color: red;
+    font-weight: bold;
+    display: grid;
+    /*justify-items: center;*/
+
+}
+.lowPpriority{
+    grid-area: priority;
+    font-weight: bold;
+    color: green;
+    font-weight: bold;
+    display: grid;
+    /*justify-items: center;*/
+
+}
+
+.addButton{
+    border-color: firebrick;
+    color: bisque;
+    font-weight: bold;
+    grid-area: addButton;
+    background-color: firebrick;
+    border-radius: 5px;
+}

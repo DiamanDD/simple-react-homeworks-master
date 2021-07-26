@@ -1,7 +1,7 @@
 import React from 'react'
-import Affair from './Affair'
-import {FilterType, newAffairsPropsType} from "./HW2";
-
+import Affair from '../Affair/Affair'
+import {FilterType, newAffairsPropsType} from "../HW2";
+import  a from "./Affairs.module.css"
 export const All="all"
 export const High="high"
 export const Middle="middle"
@@ -36,12 +36,12 @@ function Affairs(props: AffairsPropsType) {
 
 
     return (
-        <div>
+        <div className={a.container}>
             {mappedAffairs}
-            <button onClick={onClickSetFilterAll}>All</button>
-            <button onClick={onClickSetFilterHigh}>High</button>
-            <button onClick={onClickSetFilterMiddle}>Middle</button>
-            <button onClick={onClickSetFilterLow}>Low</button>
+            <button className={a.btn} onClick={onClickSetFilterAll}>All</button>
+            <button className={a.btnHight} onClick={onClickSetFilterHigh}>High</button>
+            <button className={a.btnMiddle}  onClick={onClickSetFilterMiddle}>Middle</button>
+            <button className={a.btnLow} onClick={onClickSetFilterLow}>Low</button>
         </div>
     )
 }

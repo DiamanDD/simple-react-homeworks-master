@@ -36,6 +36,12 @@ function HW1() {
                 message={messageData2.message}
                 time={messageData2.time}
             />
+            <Message
+                avatar={messageData2.avatar}
+                name={messageData2.name}
+                message={messageData2.message}
+                time={messageData2.time}
+            />
 
 
             <hr/>
