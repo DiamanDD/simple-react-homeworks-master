@@ -15,13 +15,14 @@ export type AffairsPropsType = {
 }
 
 function Affairs(props: AffairsPropsType) {
+    //деструктуризацию делай
     const onClickSetFilterAll =()=>props.setFilter(All)
     const onClickSetFilterHigh =()=>props.setFilter(High)
     const onClickSetFilterMiddle =()=>props.setFilter(Middle)
     const onClickSetFilterLow =()=>props.setFilter(Low)
     const {data, deleteAffairCallback}=props
 
-
+      //запятая после name для чего?
     const mappedAffairs = data.map(({_id,priority,name,}: newAffairsPropsType):JSX.Element => (
 
         <Affair
@@ -34,7 +35,7 @@ function Affairs(props: AffairsPropsType) {
     ))
 
 
-
+     //что такое а? не называем одной буквой, кроме мест в циклах и переборах типо мапов
     return (
         <div className={a.container}>
             {mappedAffairs}
