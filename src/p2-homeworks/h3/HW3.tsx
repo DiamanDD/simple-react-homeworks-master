@@ -17,6 +17,7 @@ function HW3() {
         let addUser = {name: name, _id: v1()}
         users = [...users, addUser]
         setUsers(users)
+        //консоль логи удаляются до пуша в мастер
         console.log(users)
 
     }
