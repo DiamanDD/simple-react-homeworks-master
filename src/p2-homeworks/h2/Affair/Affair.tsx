@@ -10,6 +10,8 @@ export type affairType = {
 function Affair(props: affairType) {
     const {id, name, priority, deleteAffairCallback} = props
     const deleteCallback = () => deleteAffairCallback(id)
+    // нихуя не понятно, но очень интересно, используй либо мап либо свитчкейс, сравнение делай только строгое, кейсов с приведением типов тебе не нужны на данном этапе
+   // консоль логи в мастер не должны попадать, для приоритетов сделать енам
     console.log(priority);
     let prioryty=a.middlePriority
     if (priority=="high"){
