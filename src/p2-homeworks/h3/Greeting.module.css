@@ -1,7 +1,60 @@
-.someClass {
+.container * {
+    margin: 5px;
 
+}
+
+.container {
+    width: 500px;
+    font-weight: bold;
+    color: antiquewhite;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 40px 40px;
+    grid-template-areas:
+    "input input ButtonAddUser"
+    "Error Error  Userstyle"
+}
+
+.styleError {
+    grid-area: Error;
+}
+
+.styleButtonAddUser {
+    border-radius: 5px;
+    font-weight: bold;
+    color: antiquewhite;
+    background-color: coral;
+    grid-area: ButtonAddUser;
+    box-shadow: 1px 1px 1px black;
+}
+.styleButtonAddUser[disabled] {
+    border-radius: 5px;
+    font-weight: bold;
+    color: rosybrown;
+    background-color: rosybrown;
+    grid-area: ButtonAddUser;
+    box-shadow: 1px 1px 1px black;
+}
+
+.totalUserstyle {
+    margin: auto;
+    grid-area: Userstyle;
+}
+
+.input {
+    background-color: bisque;
+    font-weight: bold;
+    border-radius: 5px;
+    grid-area: input;
+    box-shadow: 1px 1px 1px black;
 }
 
 .error {
     border: 1px solid red;
+    background-color: red;
+}
+
+.noerror {
+    border: 1px solid green;
 }

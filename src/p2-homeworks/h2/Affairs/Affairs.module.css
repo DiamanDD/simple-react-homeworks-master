@@ -1,0 +1,37 @@
+.container{
+    border: 1px solid black;
+    width: 420px;
+    background-color: bisque;
+}
+
+.btn{
+    border-color: bisque;
+    border-radius: 3px;
+    font-weight: bold;
+    margin: 5px;
+    width: 25%;
+}
+.btnHight{
+    border-color: bisque;
+    border-radius: 3px;
+    font-weight: bold;
+    color:firebrick;
+    margin: 5px;
+    width: 20%;
+}
+.btnLow{
+    border-color: bisque;
+    border-radius: 3px;
+    font-weight: bold;
+    color:green;
+    margin: 5px;
+    width: 20%;
+}
+.btnMiddle{
+    border-color: bisque;
+    border-radius: 3px;
+    font-weight: bold;
+    color:blue;
+    margin: 5px;
+    width: 20%;
+}

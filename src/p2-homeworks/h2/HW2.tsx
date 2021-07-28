@@ -1,48 +1,62 @@
-import React, {useState} from 'react'
-import Affairs from './Affairs'
+import React, {useState} from "react"
+import Affairs from "./Affairs/Affairs";
+import AlternativeAffairs from "./AlternativeAffairs";
 
-// types
-export type AffairPriorityType = any // need to fix any
-export type AffairType = any // need to fix any
-export type FilterType = 'all' | AffairPriorityType
+export type FilterType = "all" | "high" | "middle" | "low"
 
-// constants
-const defaultAffairs: any = [ // need to fix any
-    {_id: 1, name: 'React', priority: 'high'},
-    {_id: 2, name: 'anime', priority: 'low'},
-    {_id: 3, name: 'games', priority: 'low'},
-    {_id: 4, name: 'work', priority: 'high'},
-    {_id: 5, name: 'html & css', priority: 'middle'},
+export type newAffairsPropsType = {
+    _id: number
+    name: string
+    priority: string
+}
+
+let defaultAffairs: newAffairsPropsType[] = [ // need to fix any
+    {_id: 1, name: "React", priority: "high"},
+    {_id: 2, name: "anime", priority: "low"},
+    {_id: 3, name: "games", priority: "low"},
+    {_id: 4, name: "work", priority: "high"},
+    {_id: 5, name: "html & css", priority: "middle"},
+    {_id: 1, name: "React", priority: "high"},
+    {_id: 2, name: "anime", priority: "low"},
+    {_id: 3, name: "games", priority: "low"},
+    {_id: 4, name: "work", priority: "high"},
+    {_id: 5, name: "html & css", priority: "middle"}
+
+
 ]
 
-// pure helper functions
-export const filterAffairs = (affairs: any, filter: any): any => { // need to fix any
-    if (filter === 'all') return affairs
-    else return // need to fix
-}
-export const deleteAffair = (affairs: any, _id: any): any => { // need to fix any
-    return // need to fix
+export const deleteAffair = (affairs: newAffairsPropsType[], _id: number): newAffairsPropsType[] => {
+    return affairs.filter((t) => t._id !== _id)
 }
 
-function HW2() {
-    const [affairs, setAffairs] = useState<any>(defaultAffairs) // need to fix any
-    const [filter, setFilter] = useState<FilterType>('all')
+function HW2():JSX.Element {
+    let [affairs, setAffairs] = useState<newAffairsPropsType[]>(defaultAffairs)
 
-    const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: any) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
+    const [importanceOfAffairs, setFilter] = useState<FilterType>("all")
 
+    if (importanceOfAffairs === "high") {
+        affairs = affairs.filter((s) => (s.priority == importanceOfAffairs))
+    } else if (importanceOfAffairs === "middle") {
+        affairs = affairs.filter((s) => (s.priority == importanceOfAffairs))
+    }
+    if (importanceOfAffairs === "low") {
+        affairs = affairs.filter((s) => (s.priority == importanceOfAffairs))
+    }
+    const filterAffairs = (filterAffairs: FilterType) => { // need to fix any
+        setFilter(filterAffairs)
+    }
+    const deleteAffairCallback = (_id: number) => {
+        setAffairs(deleteAffair(affairs, _id))
+    }
     return (
         <div>
             <hr/>
             homeworks 2
-
-            {/*should work (должно работать)*/}
             <Affairs
-                data={filteredAffairs}
-                setFilter={setFilter}
+                data={affairs}
+                setFilter={filterAffairs}
                 deleteAffairCallback={deleteAffairCallback}
             />
-
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeAffairs/>*/}

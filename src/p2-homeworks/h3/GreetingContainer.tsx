@@ -1,10 +1,13 @@
-import React, {useState} from 'react'
-import Greeting from './Greeting'
+import React, {ChangeEvent, useState} from "react"
+import Greeting from "./Greeting"
+import {UserType} from "./HW3";
+import {isString} from "util";
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+    users: UserType[] // need to fix any
+    addUserCallback: (name: string) => void // need to fix any
 }
+
 
 // более простой и понятный для новичков
 // function GreetingContainer(props: GreetingPropsType) {
@@ -12,17 +15,31 @@ type GreetingContainerPropsType = {
 // более современный и удобный для про :)
 // уровень локальной логики
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+    const [name, setName] = useState<string>("") // need to fix any
+    const [error, setError] = useState<any>("") // need to fix any
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+        setName(e.currentTarget.value) // need to fix
     }
     const addUser = () => {
-        alert(`Hello  !`) // need to fix
+        let stopeed = false
+        for (const key of name) {
+
+            if (key == "0" || key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6" || key == "7" || key == "8" || key == "9") {
+                stopeed = true
+            }
+        }
+
+        if (stopeed) {
+            setError("Имя не может содержать цифры")
+        } else {
+            setError("")
+            addUserCallback((name.trim()[0].toUpperCase() + name.trim().slice(1)).trim())
+            alert(`Hello ${name.trim()} !`)
+        }
     }
 
-    const totalUsers = 0 // need to fix
+    const totalUsers = users.length
 
     return (
         <Greeting
@@ -31,6 +48,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
+
         />
     )
 }
