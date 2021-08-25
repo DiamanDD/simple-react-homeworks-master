@@ -2,7 +2,7 @@ import React, {ChangeEvent, useState} from "react"
 import Greeting from "./Greeting"
 import {UserType} from "./HW3";
 import {isString} from "util";
-
+const  regExpString =/^[A-Za-zА-Яа-яЁё]/g
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
     addUserCallback: (name: string) => void // need to fix any
@@ -14,6 +14,7 @@ type GreetingContainerPropsType = {
 
 // более современный и удобный для про :)
 // уровень локальной логики
+
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
     const [name, setName] = useState<string>("") // need to fix any
     const [error, setError] = useState<any>("") // need to fix any
@@ -30,13 +31,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             }
         }
 
-        if (stopeed) {
-            setError("Имя не может содержать цифры")
-        } else {
-            setError("")
-            addUserCallback((name.trim()[0].toUpperCase() + name.trim().slice(1)).trim())
-            alert(`Hello ${name.trim()} !`)
-        }
+        console.log(name.match(regExpString));
+
+        if (stopeed)return  setError("Имя не может содержать цифры")
+        error&&setError("")
+        addUserCallback((name.trim()[0].toUpperCase() + name.trim().slice(1)).trim())
+        alert(`Hello ${name.trim()} !`)
+
     }
 
     const totalUsers = users.length
