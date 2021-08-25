@@ -10,16 +10,13 @@ export type UserType = {
 
 // уровень работы с глобальными данными
 function HW3() {
-    let [users, setUsers] = useState<UserType[]>([
+    const [users, setUsers] = useState<UserType[]>([
         {name: "Dima", _id: v1()}
     ])
     const addUserCallback = (name: string) => { // need to fix any
         let addUser = {name: name, _id: v1()}
-        users = [...users, addUser]
-        setUsers(users)
-        //консоль логи удаляются до пуша в мастер
-        console.log(users)
-
+        // setUsers(prev=>[...prev,addUser])
+        setUsers([...users,addUser])
     }
 
     return (

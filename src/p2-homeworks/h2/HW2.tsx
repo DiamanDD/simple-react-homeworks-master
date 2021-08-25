@@ -1,13 +1,14 @@
 import React, {useState} from "react"
 import Affairs from "./Affairs/Affairs";
 import AlternativeAffairs from "./AlternativeAffairs";
+import {PriorityType} from "./Affair/Affair";
 
-export type FilterType = "all" | "high" | "middle" | "low"
+export type FilterType = "all" | PriorityType
 
 export type newAffairsPropsType = {
     _id: number
     name: string
-    priority: string
+    priority: PriorityType
 }
 
 let defaultAffairs: newAffairsPropsType[] = [ // need to fix any
@@ -15,13 +16,7 @@ let defaultAffairs: newAffairsPropsType[] = [ // need to fix any
     {_id: 2, name: "anime", priority: "low"},
     {_id: 3, name: "games", priority: "low"},
     {_id: 4, name: "work", priority: "high"},
-    {_id: 5, name: "html & css", priority: "middle"},
-    {_id: 1, name: "React", priority: "high"},
-    {_id: 2, name: "anime", priority: "low"},
-    {_id: 3, name: "games", priority: "low"},
-    {_id: 4, name: "work", priority: "high"},
     {_id: 5, name: "html & css", priority: "middle"}
-
 
 ]
 

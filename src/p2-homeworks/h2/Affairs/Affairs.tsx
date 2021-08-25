@@ -1,11 +1,13 @@
 import React from 'react'
 import Affair from '../Affair/Affair'
 import {FilterType, newAffairsPropsType} from "../HW2";
-import  a from "./Affairs.module.css"
-export const All="all"
-export const High="high"
-export const Middle="middle"
-export const Low="low"
+import  styles from "./Affairs.module.css"
+export const ALL="all"
+export const HIGH="high"
+export const MIDDLE="middle"
+export const LOW="low"
+
+
 
 
 export type AffairsPropsType = {
@@ -15,15 +17,16 @@ export type AffairsPropsType = {
 }
 
 function Affairs(props: AffairsPropsType) {
-    //деструктуризацию делай
-    const onClickSetFilterAll =()=>props.setFilter(All)
-    const onClickSetFilterHigh =()=>props.setFilter(High)
-    const onClickSetFilterMiddle =()=>props.setFilter(Middle)
-    const onClickSetFilterLow =()=>props.setFilter(Low)
-    const {data, deleteAffairCallback}=props
+    const {data, deleteAffairCallback,setFilter}=props
 
-      //запятая после name для чего?
-    const mappedAffairs = data.map(({_id,priority,name,}: newAffairsPropsType):JSX.Element => (
+    const onClickSetFilterAll =()=>setFilter(ALL)
+    const onClickSetFilterHigh =()=>setFilter(HIGH)
+    const onClickSetFilterMiddle =()=>setFilter(MIDDLE)
+    const onClickSetFilterLow =()=>setFilter(LOW)
+
+
+
+    const mappedAffairs = data.map(({_id,priority,name}: newAffairsPropsType):JSX.Element => (
 
         <Affair
             key={_id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
@@ -34,15 +37,14 @@ function Affairs(props: AffairsPropsType) {
         />
     ))
 
-
      //что такое а? не называем одной буквой, кроме мест в циклах и переборах типо мапов
     return (
-        <div className={a.container}>
+        <div className={styles.container}>
             {mappedAffairs}
-            <button className={a.btn} onClick={onClickSetFilterAll}>All</button>
-            <button className={a.btnHight} onClick={onClickSetFilterHigh}>High</button>
-            <button className={a.btnMiddle}  onClick={onClickSetFilterMiddle}>Middle</button>
-            <button className={a.btnLow} onClick={onClickSetFilterLow}>Low</button>
+            <button className={styles.btn} onClick={onClickSetFilterAll}>All</button>
+            <button className={styles.btnHight} onClick={onClickSetFilterHigh}>High</button>
+            <button className={styles.btnMiddle} onClick={onClickSetFilterMiddle}>Middle</button>
+            <button className={styles.btnLow} onClick={onClickSetFilterLow}>Low</button>
         </div>
     )
 }
